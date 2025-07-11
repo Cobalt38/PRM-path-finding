@@ -87,7 +87,7 @@ def isSafe(q) -> bool:
     try:
         clientSocket.sendto(json.dumps(message).encode("utf-8"), addr)
         data, addr = clientSocket.recvfrom(1)
-    except socket.timeout:
+    except timeout:
         return False
 
     if data[0] == 1:
