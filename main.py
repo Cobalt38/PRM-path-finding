@@ -281,6 +281,7 @@ def main():
     # isSafe((3,2,4,6,7,8))
     nodes = loadNodeFile()
     nodes.extend(populate())
+    nodes = list(set(nodes)) # rimuove duplicati (bello python)
     arcs = loadArcsFile()
     arcs.extend(calcArcs(nodes))
     G = buildGraph(arcs=arcs)
